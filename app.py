@@ -607,13 +607,16 @@ def chat_interface(message, history, session_id):
             return history, "", session_id
         
         response = chatbot.process_message(message, session_id)
-        history.append([message, response])
+        # For messages format, append as dictionaries
+        history.append({"role": "user", "content": message})
+        history.append({"role": "assistant", "content": response})
         
         return history, "", session_id
     except Exception as e:
         logger.error(f"Error in chat interface: {e}")
         error_response = "I'm sorry, there was an error processing your message. Please try again."
-        history.append([message, error_response])
+        history.append({"role": "user", "content": message})
+        history.append({"role": "assistant", "content": error_response})
         return history, "", session_id
 
 def reset_chat():
@@ -639,7 +642,8 @@ with gr.Blocks(title="Multi-Agent Ordering Chatbot", theme=gr.themes.Soft()) as 
             chatbot_interface = gr.Chatbot(
                 label="Chat with the Ordering Assistant",
                 height=500,
-                show_copy_button=True
+                show_copy_button=True,
+                type="messages"
             )
             
             with gr.Row():
@@ -685,11 +689,8 @@ if __name__ == "__main__":
     logger.info("Application started")
     
     try:
-        demo.launch(
-            server_name="0.0.0.0",
-            server_port=7861,
-            share=True
-        )
+        # For Hugging Face Spaces, let it handle port allocation
+        demo.launch()
     except Exception as e:
         logger.critical(f"Failed to launch application: {e}")
         raise
