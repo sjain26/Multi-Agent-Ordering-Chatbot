@@ -3,7 +3,7 @@
 import os
 
 # Get API key from environment variable or use default
-GROQ_API_KEY = os.getenv("GROQ_API_KEY", "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")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 import gradio as gr
 import sqlite3
 import json

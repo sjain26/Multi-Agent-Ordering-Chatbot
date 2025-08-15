@@ -14,6 +14,8 @@ license: mit
 
 An intelligent chatbot system that uses multiple specialized agents to handle different types of orders efficiently.
 
+🔗 **Live Demo**: [https://huggingface.co/spaces/jainsatyam26/intent-identifier](https://huggingface.co/spaces/jainsatyam26/intent-identifier)
+
 ## Features
 
 - **Smart Classification**: Automatically classifies orders as generic or bulk using AI
