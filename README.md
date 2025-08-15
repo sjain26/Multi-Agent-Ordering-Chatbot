@@ -37,6 +37,24 @@ An intelligent chatbot system that uses multiple specialized agents to handle di
 5. Follow the agent's prompts to complete your order
 6. View your order summary in JSON format
 
+## Setup Instructions
+
+1. **Set up your Groq API Key:**
+   ```bash
+   export GROQ_API_KEY="your_groq_api_key_here"
+   ```
+   Get your API key from: https://console.groq.com/keys
+
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Run the application:**
+   ```bash
+   python app.py
+   ```
+
 ## Technical Details
 
 - Built with LangChain and Groq AI
