@@ -205,4 +205,4 @@ For issues, questions, or contributions:
 
 ---
 
-Made with ❤️ for Systango
+Made  for Systango
